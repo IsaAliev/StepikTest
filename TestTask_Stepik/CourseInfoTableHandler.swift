@@ -50,15 +50,7 @@ class CourseInfoTableHandler: NSObject, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch configuration {
-        case .common:
-            return common.rows
-        case .detailed:
-            return detailed.rows
-        case .sections:
-            return (modules.rows)
-
-        }
+        return currentConfigurationObject.rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
